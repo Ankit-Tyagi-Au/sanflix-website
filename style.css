@@ -230,6 +230,13 @@ footer a:hover{opacity:1;text-decoration:underline;}
 .chat-input input{flex:1;border:none;padding:12px;font-size:0.9rem;}
 .chat-input button{border:none;background:var(--lime);padding:0 16px;font-weight:700;cursor:pointer;}
 
+/* PRE-LAUNCH: remove this whole block + its HTML usage once Sanflix officially launches */
+.announce-bar{
+  background:var(--ink);color:#fff;text-align:center;
+  padding:10px 16px;font-size:0.85rem;font-weight:600;
+}
+.announce-bar a{color:var(--lime);text-decoration:underline;}
+
 /* Utility */
 .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
 .badge{font-size:0.8rem;font-weight:700;color:var(--teal);background:rgba(15,107,92,0.08);padding:6px 12px;border-radius:100px;}
