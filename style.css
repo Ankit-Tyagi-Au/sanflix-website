@@ -149,7 +149,7 @@ section{padding:72px 0;}
 .product-tile .enquire{margin-top:auto;font-weight:700;font-size:0.88rem;color:var(--teal);text-decoration:none;}
 
 /* Why grid */
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;}
 .why-item{border-left:3px solid var(--lime);padding-left:18px;}
 @media(max-width:860px){.why-grid{grid-template-columns:1fr;}}
 
