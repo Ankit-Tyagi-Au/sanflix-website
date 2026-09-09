@@ -28,7 +28,7 @@
     </nav>
     <div class="nav-cta">
       <a href="contact.html" class="btn btn-primary">Get in touch</a>
-      <button class="menu-toggle" aria-label="Toggle menu">
+      <button type="button" class="menu-toggle" aria-label="Toggle menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
@@ -44,7 +44,7 @@
       </div>
 
       <div class="form-grid">
-        <form action="https://formspree.io/f/xoeqpdew" method="POST">
+        <form id="enquiry-form" action="https://formspree.io/f/xoeqpdew" method="POST">
           <div class="field">
             <label for="enquiry-type">I am a…</label>
             <select id="enquiry-type" name="enquiry_type" required>
@@ -88,7 +88,13 @@
           </div>
 
           <button type="submit" class="btn btn-primary btn-wide">Send enquiry</button>
+          <p id="form-error" style="display:none;color:var(--danger);font-size:0.88rem;margin-top:12px;">Something went wrong sending your enquiry. Please try WhatsApp or email instead.</p>
         </form>
+
+        <div id="form-success" style="display:none;text-align:center;padding:40px 20px;">
+          <h3>Thank you!</h3>
+          <p>Your enquiry has been sent. We'll get back to you within 1–2 business days.</p>
+        </div>
 
         <div class="contact-card">
           <h3>Other ways to reach us</h3>
