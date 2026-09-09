@@ -1,14 +1,14 @@
 /* ===== Sanflix — Design tokens ===== */
 :root{
   /* Colors pulled directly from the real Sanflix logo */
-  --ink: #0A2647;
+  --ink: #011C53;
   --ink-soft: #3C5578;
   --paper: #F5F7FA;
   --paper-raised: #FFFFFF;
   --teal: #163F7A;
   --teal-dark: #0F2D59;
-  --lime: #6FA02D;
-  --lime-dark: #578425;
+  --lime: #12652D;
+  --lime-dark: #0D4A21;
   --sage: #6B7684;
   --line: #DCE2E8;
   --danger: #B4432E;
