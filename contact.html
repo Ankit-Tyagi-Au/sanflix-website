@@ -59,9 +59,10 @@
 
       <div class="form-grid">
         <form id="enquiry-form" action="https://formspree.io/f/xoeqpdew" method="POST">
+          <input type="hidden" name="_subject" value="New Enquiry — Sanflix Website">
           <div class="field">
             <label for="enquiry-type">I am a…</label>
-            <select id="enquiry-type" name="enquiry_type" required>
+            <select id="enquiry-type" name="Enquiry Type" required>
               <option value="consumer">Consumer</option>
               <option value="retailer">Retailer</option>
               <option value="distributor">Distributor</option>
@@ -70,11 +71,11 @@
           </div>
           <div class="field">
             <label for="name">Full name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="Full Name" required>
           </div>
           <div class="field">
             <label for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="Phone Number" required>
           </div>
           <div class="field">
             <label for="email">Email</label>
@@ -82,23 +83,23 @@
           </div>
           <div class="field">
             <label for="city">City</label>
-            <input type="text" id="city" name="city">
+            <input type="text" id="city" name="City">
           </div>
 
           <div id="business-fields">
             <div class="field">
               <label for="business-name">Business / shop name</label>
-              <input type="text" id="business-name" name="business_name">
+              <input type="text" id="business-name" name="Business / Shop Name">
             </div>
             <div class="field">
               <label for="volume">Estimated monthly volume</label>
-              <input type="text" id="volume" name="estimated_volume" placeholder="e.g. 50 units/month">
+              <input type="text" id="volume" name="Estimated Monthly Volume" placeholder="e.g. 50 units/month">
             </div>
           </div>
 
           <div class="field">
             <label for="message">Your message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <textarea id="message" name="Message" rows="4" required></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary btn-wide">Send enquiry</button>
