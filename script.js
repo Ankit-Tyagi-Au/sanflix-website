@@ -64,20 +64,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== Chatbot widget (placeholder — wire CHATBOT_API_URL to your deployed RAG API) =====
-  const CHATBOT_API_URL = ''; // e.g. 'https://your-sanflix-chatbot.onrender.com/chat'
-
+  // ===== Chatbot widget: simple keyword-matching assistant (no backend needed) =====
   const chatToggle = document.querySelector('.chat-toggle');
   const chatPanel = document.querySelector('.chat-panel');
   const chatBody = document.querySelector('.chat-body');
   const chatForm = document.querySelector('.chat-input');
+
+  // Each entry: keywords to look for, and the answer to give if any keyword matches.
+  // Checked in order, so more specific intents (like "whatsapp") are listed before general ones (like "contact").
+  const CHAT_ANSWERS = [
+    {
+      keywords: ['whatsapp', 'whats app'],
+      answer: "You can WhatsApp us directly at +91 81688 00195 — just tap the green WhatsApp button in the corner!"
+    },
+    {
+      keywords: ['deliver', 'delivery', 'ship', 'area', 'location', 'available', 'city'],
+      answer: "We're starting with a strong retail presence in one city and its surrounding areas in India, with plans to expand soon. Contact us to check availability in your area."
+    },
+    {
+      keywords: ['launch', 'when are you', 'live'],
+      answer: "Sanflix is launching soon in India! Get in touch through our Contact page to be among the first to know."
+    },
+    {
+      keywords: ['product', 'products', 'sell', 'range', 'items'],
+      answer: "We make a full range of home cleaning products: Toilet Cleaner, Floor Cleaner, Phenyl, Dishwash, Hand Wash and Glass Cleaner. Check out our Products page for details!"
+    },
+    {
+      keywords: ['contact', 'reach', 'email', 'phone', 'call', 'get in touch'],
+      answer: "You can reach us via WhatsApp, email at info@sanflix.in, or fill out our enquiry form on the Contact page — we usually reply within 1-2 business days."
+    }
+  ];
+
+  const FALLBACK_ANSWER = "I can help with questions about our products, launch, delivery areas, or how to contact us. For anything else, please reach out via WhatsApp or our Contact page!";
+
+  function getBotAnswer(userText) {
+    const text = userText.toLowerCase();
+    for (const entry of CHAT_ANSWERS) {
+      if (entry.keywords.some(kw => text.includes(kw))) {
+        return entry.answer;
+      }
+    }
+    return FALLBACK_ANSWER;
+  }
 
   if (chatToggle && chatPanel) {
     chatToggle.addEventListener('click', () => chatPanel.classList.toggle('open'));
   }
 
   if (chatForm) {
-    chatForm.addEventListener('submit', async (e) => {
+    chatForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const input = chatForm.querySelector('input');
       const text = input.value.trim();
@@ -85,23 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
       appendMsg(text, 'user');
       input.value = '';
 
-      if (!CHATBOT_API_URL) {
-        appendMsg("Chatbot backend isn't connected yet — this is a placeholder. Once your RAG API is deployed, set CHATBOT_API_URL in script.js.", 'bot');
-        return;
-      }
-
-      appendMsg('Thinking…', 'bot', true);
-      try {
-        const res = await fetch(CHATBOT_API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: text })
-        });
-        const data = await res.json();
-        replaceLastBotMsg(data.answer || "Sorry, I couldn't find an answer to that.");
-      } catch (err) {
-        replaceLastBotMsg("Sorry, something went wrong reaching the chatbot. Please try again shortly.");
-      }
+      // Small delay so it feels like a natural reply rather than an instant canned response
+      setTimeout(() => {
+        appendMsg(getBotAnswer(text), 'bot');
+      }, 400);
     });
   }
 
@@ -110,12 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
     div.className = 'msg ' + who;
     div.textContent = text;
     chatBody.appendChild(div);
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }
-  function replaceLastBotMsg(text) {
-    const msgs = chatBody.querySelectorAll('.msg.bot');
-    const last = msgs[msgs.length - 1];
-    if (last) last.textContent = text;
     chatBody.scrollTop = chatBody.scrollHeight;
   }
 });
