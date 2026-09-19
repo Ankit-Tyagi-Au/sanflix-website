@@ -78,15 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
       answer: "You can WhatsApp us directly at +91 81688 00195 — just tap the green WhatsApp button in the corner!"
     },
     {
-      keywords: ['deliver', 'delivery', 'ship', 'area', 'location', 'available', 'city'],
+      keywords: ['deliver', 'delivery', 'ship', 'area', 'location', 'available', 'city', 'where'],
       answer: "We're starting with a strong retail presence in one city and its surrounding areas in India, with plans to expand soon. Contact us to check availability in your area."
     },
     {
-      keywords: ['launch', 'when are you', 'live'],
+      keywords: ['launch', 'when are you', 'live', 'start selling', 'open'],
       answer: "Sanflix is launching soon in India! Get in touch through our Contact page to be among the first to know."
     },
     {
-      keywords: ['product', 'products', 'sell', 'range', 'items'],
+      keywords: ['product', 'products', 'sell', 'range', 'items', 'have', 'offer', 'stock', 'cleaner', 'cleaners'],
       answer: "We make a full range of home cleaning products: Toilet Cleaner, Floor Cleaner, Phenyl, Dishwash, Hand Wash and Glass Cleaner. Check out our Products page for details!"
     },
     {
