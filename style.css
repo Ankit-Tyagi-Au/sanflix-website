@@ -147,7 +147,7 @@ p{max-width:65ch;color:var(--ink-soft);}
   border-radius:var(--radius);padding:28px;border:1px solid var(--line);
   box-shadow:0 24px 60px -30px rgba(18,56,50,0.35);
 }
-.hero-art img{border-radius:4px;}
+.hero-art img{border-radius:4px;width:100%;height:auto;display:block;object-fit:contain;}
 .hero-art .caption{margin-top:14px;font-size:0.85rem;color:var(--sage);text-align:center;}
 
 @media(max-width:860px){
