@@ -136,7 +136,8 @@ p{max-width:65ch;color:var(--ink-soft);}
   clip-path:polygon(28% 0, 100% 0, 100% 100%, 0% 100%);
   z-index:0;
 }
-.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:center;}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr;gap:40px;align-items:center;}
+.hero-copy{max-width:680px;}
 .hero-copy .tag{
   display:inline-block;background:var(--lime);color:#fff;
   font-weight:700;font-size:0.82rem;padding:6px 14px;border-radius:100px;margin-bottom:18px;
