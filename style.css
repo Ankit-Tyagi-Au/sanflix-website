@@ -164,8 +164,8 @@ section{padding:72px 0;}
 .section-alt{background:var(--paper-raised);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
 
 /* Product tiles - flat bordered, not identical shadow cards */
-.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
-.product-tile{background:var(--paper-raised);padding:28px 24px;display:flex;flex-direction:column;gap:12px;}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+.product-tile{background:var(--paper-raised);padding:28px 24px;display:flex;flex-direction:column;gap:12px;border:1px solid var(--line);border-radius:var(--radius);}
 .product-tile .swatch{width:44px;height:44px;border-radius:50%;background:var(--lime);}
 .product-tile h3{margin-bottom:0;}
 .product-tile p{font-size:0.92rem;margin:0;}
