@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /design-directions/
+
+Sitemap: https://sanflix.in/sitemap.xml
