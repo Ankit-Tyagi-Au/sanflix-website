@@ -104,4 +104,4 @@ Netlify deploys the `main` branch to [sanflix.in](https://sanflix.in).
 
 ---
 
-Built by **Ankit Tyagi**, [Riverrax](https://riverrax.com), for Kedar Consumer Products.
+Built by **Ankit Tyagi** for Kedar Consumer Products.
